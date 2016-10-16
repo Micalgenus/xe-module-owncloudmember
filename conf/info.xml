@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="ko">ownCloud 회원 동기화 모듈</title>
+    <description xml:lang="ko">ownCloud와 회원 정보를 공유하기 위한 모듈입니다. XE의 정보를 이용하여 ownCloud의 회원 정보를 갱신합니다.</description>
+    <version>1.0</version>
+    <date>2016-10-12</date>
+    <category>system</category>
+
+    <author email_address="micalgenus@gmail.com" link="http://micalgenus.tistory.com">
+        <name xml:lang="ko">Micalgenus</name>
+    </author>
+</module>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions />
+	<actions>
+		<!-- View -->
+		<action name="dispOwncloudmemberIndex" type="view" index="true" />
+
+		<!-- Admin View -->
+		<action name="dispOwncloudmemberAdminIndex" type="view" admin_index="true" />
+		<action name="dispOwncloudmemberAdminGroup" type="view" />
+
+		<!-- Admin Controller -->
+		<action name="procOwncloudmemberAdminSiteChange" type="controller" />
+	</actions>
+</module>

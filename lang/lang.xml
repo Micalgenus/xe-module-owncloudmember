@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="owncloudmember">
+		<value xml:lang="ko"><![CDATA[ownCloud 회원 동기화]]></value>
+	</item>
+	<item name="default_setting">
+		<value xml:lang="ko"><![CDATA[기본 설정]]></value>
+	</item>
+	<item name="group_setting">
+		<value xml:lang="ko"><![CDATA[그룹 설정]]></value>
+	</item>
+	<item name="admin_id">
+		<value xml:lang="ko"><![CDATA[관리자 아이디]]></value>
+	</item>
+	<item name="admin_pw">
+		<value xml:lang="ko"><![CDATA[관리자 비밀번호]]></value>
+	</item>
+	<item name="sync_able">
+		<value xml:lang="ko"><![CDATA[동기화 사용]]></value>
+	</item>
+	<item name="about_sync_able">
+		<value xml:lang="ko"><![CDATA[ownCloud회원 정보에 XE회원 정보를 추가 및 수정합니다.]]></value>
+	</item>
+	<item name="sync_admin">
+		<value xml:lang="ko"><![CDATA[관리자 동기화 사용]]></value>
+	</item>
+	<item name="about_sync_admin">
+		<value xml:lang="ko"><![CDATA[관리자를 동기화에 포함 시킵니다.]]></value>
+	</item>
+	<item name="quota_size">
+		<value xml:lang="ko"><![CDATA[용량 제한]]></value>
+	</item>
+	<item name="quota_none">
+		<value xml:lang="ko"><![CDATA[무제한]]></value>
+	</item>
+</lang>
