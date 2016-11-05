@@ -33,4 +33,7 @@
 	<item name="quota_none">
 		<value xml:lang="ko"><![CDATA[무제한]]></value>
 	</item>
+    <item name="owncloudmember_admin_setting">
+        <value xml:lang="ko"><![CDATA[관리자 계정 설정]]></value>
+    </item>
 </lang>

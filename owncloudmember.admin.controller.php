@@ -1,10 +1,10 @@
 <?php
 /**
  * @class	owncloudmember Admin Controller Module
- * @date	2016/10/13
+ * @date	2016/10/19
  * @author	Micalgenus(micalgenus@gmail.com)
  * @package /modules/owncloudmember
- * @version 1.0
+ * @version 0.0.2
  * @brief	ownCloud 회원 동기화 관리자 controller
  */
 class owncloudmemberAdminController extends owncloudmember
@@ -12,10 +12,12 @@ class owncloudmemberAdminController extends owncloudmember
 	/**
 	 * @brief	Initilization
 	 */
-	function init() {
+	function init()
+	{
 	}
 
-	function procOwncloudmemberAdminSiteChange() {
+	function procOwncloudmemberAdminSiteChange()
+	{
 		// Init module value
 		$oModuleModel = &getModel('module');
 		$oModuleController = &getController('module');
@@ -50,16 +52,26 @@ class owncloudmemberAdminController extends owncloudmember
 		// Update module config
 		$oModuleController->insertModuleConfig('owncloudmember', $config);
 
-		if ($config->able_module == 'Y') {
+		if ($config->able_module == 'Y')
+        {
 			// add trigger
 			$oModuleController->insertTrigger('member.doLogin', 'owncloudmember', 'controller', 'triggerBeforeLogin', 'before');
-
+            $oModuleController->insertTrigger('moduleHandler.init', 'owncloudmember', 'controller', 'triggerBeforeChangePassword', 'before');
+			
 			// all user sync
 			//$oOwncloudememberAdminModel = &getAdminModel('owncloudmember');
 			//$oOwncloudememberAdminModel->allUserSync();
-		} else if ($config->able_module != 'Y') {
-			if($oModuleModel->getTrigger('member.doLogin', 'owncloudmember', 'controller', 'triggerBeforeLogin', 'before')) {
+		}
+        else if ($config->able_module != 'Y')
+        {
+			if ($oModuleModel->getTrigger('member.doLogin', 'owncloudmember', 'controller', 'triggerBeforeLogin', 'before'))
+            {
 				$oModuleController->deleteTrigger('member.doLogin', 'owncloudmember', 'controller', 'triggerBeforeLogin', 'before');
+			}
+
+			if ($oModuleModel->getTrigger('moduleHandler.init', 'owncloudmember', 'controller', 'triggerBeforeChangePassword', 'before'))
+            {
+				$oModuleController->deleteTrigger('moduleHandler.init', 'owncloudmember', 'controller', 'triggerBeforeChangePassword', 'before');
 			}
         }
 

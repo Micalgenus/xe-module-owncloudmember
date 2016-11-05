@@ -1,10 +1,10 @@
 <?php
 /**
  * @class	owncloudmember Admin Model Module
- * @date	2016/10/13
+ * @date	2016/10/19
  * @author	Micalgenus(micalgenus@gmail.com)
  * @package /modules/owncloudmember
- * @version 1.0
+ * @version 0.0.2
  * @brief	ownCloud 회원 동기화 관리자 Model
  */
 class owncloudmemberAdminModel extends owncloudmember
@@ -186,9 +186,26 @@ class owncloudmemberAdminModel extends owncloudmember
 		$this->changeUserInfo($user_id, "display", $member->user_name);
 		$this->changeUserInfo($user_id, "email", $member->email_address);
 		//$this->changeUserInfo($user_id, "quota", $this->getQuota());
+        $this->addGroup($user_id, "ISCERT");
 	}
 
-	function changeUserInfo($user_id = NULL, $key = NULL, $value = NULL) {
+    function changeUserPassword($user_id = NULL, $password = NULL)
+    {
+		// Parameter check
+        if ($user_id == NULL || $password == NULL) return NULL;
+
+		// String encoding
+		if (preg_match('!!u', $password)) $password = iconv("euckr", "utf8", $password);
+
+		$result = $this->changeUserInfo($user_id, "password", $password);
+        // success
+        if ($result) return true;
+        // fail
+        else return false;
+    }
+
+	function changeUserInfo($user_id = NULL, $key = NULL, $value = NULL)
+    {
 		// Parameter check
 		if ($user_id == NULL || $key == NULL || $value == NULL) return NULL;
 

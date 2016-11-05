@@ -1,15 +1,15 @@
 <?php
 /**
  * @class	owncloudmember Admin View Module
- * @date	2016/10/12
+ * @date	2016/10/19
  * @author	Micalgenus(micalgenus@gmail.com)
  * @package /modules/owncloudmember
- * @version 1.0
+ * @version 0.0.2
  * @brief	ownCloud 회원 동기화 관리자 View
  */
 class owncloudmemberAdminView extends owncloudmember
 {
-	/**
+    /**
 	 * @brief	Initilization
 	 */
 	function init() {
@@ -19,15 +19,14 @@ class owncloudmemberAdminView extends owncloudmember
 	}
 
 	/**
-	 * @brief	ownCloud admin index page
-	 */
-	function dispOwncloudmemberAdminIndex() {
-		// Get config
-		$config = getModel('module')->getModuleConfig('owncloudmember');
+     * @brief	ownCloud admin index page
+     */
+    function dispOwncloudmemberAdminIndex() {
+        // Get config
+        $config = getModel('module')->getModuleConfig('owncloudmember');
 
-        $oOwncloudmemberAdminModel = &getAdminModel('owncloudmember');
+        //$oOwncloudmemberAdminModel = &getAdminModel('owncloudmember');
         //$oOwncloudmemberAdminModel->addGroup('hgs196', '홍보부');
-        //echo $oOwncloudmemberAdminModel->getQuota();
 
 		// Setting value
 		Context::set('able_module', $config->able_module);
