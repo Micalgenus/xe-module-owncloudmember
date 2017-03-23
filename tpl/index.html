@@ -52,7 +52,7 @@
     </section>
 
     <section class="section">
-		<h2 style="padding-top:12px">{$lang->owncloudmember_admin_setting}</h2>
+		<h2 style="padding-top:12px">{$lang->owncloudmember_size_setting}</h2>
         <div class="x_control-group">
             <div class="x_control-label">{$lang->quota_size}</div>
             <div class="x_controls">
@@ -71,4 +71,30 @@
     <div class="x_clearfix btnArea">
         <button type="submit" class="x_btn x_btn-primary x_pull-right">저장</button>
     </div>
+</form>
+
+<form class="x_form-horizontal" action="./" method="post" id="owncloudmember">
+	<input type="hidden" name="module" value="owncloudmember" />
+	<input type="hidden" name="act" value="procOwncloudmemberAdminChangePassword" />
+
+  <section class="section able_module_setting">
+    <h2 style="padding-top:12px">{$lang->owncloudmember_password_change}</h2>
+
+    <div class="x_control-group">
+        <div class="x_control-label">{$lang->password_change}</div>
+        <div class="x_controls">
+            <input type="password" name="new_password" style="width:30%">
+        </div>
+    </div>
+    <div class="x_control-group">
+        <div class="x_control-label">{$lang->re_password_change}</div>
+        <div class="x_controls">
+            <input type="password" name="re_new_password" style="width:30%">
+        </div>
+    </div>
+  </section>
+
+  <div class="x_clearfix btnArea">
+      <button type="submit" class="x_btn x_btn-primary x_pull-right">저장</button>
+  </div>
 </form>

@@ -7,8 +7,7 @@
  * @version 0.0.2
  * @brief	ownCloud 회원 동기화 관리자 Model
  */
-class owncloudmemberAdminModel extends owncloudmember
-{
+class owncloudmemberAdminModel extends owncloudmember {
 	/**
 	 * @brief	Initilization
 	 */
@@ -48,7 +47,7 @@ class owncloudmemberAdminModel extends owncloudmember
 		$config = getModel('module')->getModuleConfig('owncloudmember');
 
 		// Value Init
-		$url = $config->site_protocol . $config->admin_id . ":" . convert_uudecode($config->admin_pw) . "@" . $config->site_url . "/";
+		$url = $config->site_protocol . urlencode($config->admin_id) . ":" . urlencode(convert_uudecode($config->admin_pw)) . "@" . $config->site_url . "/";
 		$url = $url . $path . " ";
 		$protocol = strtoupper($protocol);
 
@@ -77,8 +76,6 @@ class owncloudmemberAdminModel extends owncloudmember
 		// return XML object
 		return simplexml_load_string($res); 
 	}
-
-	
 
 	/**
 	 * @brief	Create ownCloud user from xe member information.
@@ -136,8 +133,10 @@ class owncloudmemberAdminModel extends owncloudmember
 
 		$group_list = $this->getGroupListById($user_id);
 
-		if ($group_list[75307] || $group_list[3]) 
-            return true;
+		if ($group_list[75307] || $group_list[3]) {
+      return true;
+    }
+
 		return false;
 	}
 
@@ -152,10 +151,12 @@ class owncloudmemberAdminModel extends owncloudmember
 		if ($this->grantCheck($user_id) == false) return NULL;
 
 		// Exist check
-		if ($this->userExistCheck($user_id) == false)
+		if ($this->userExistCheck($user_id) == false) {
 			// Password Exist
-			if ($password != NULL)
+			if ($password != NULL) {
 				$this->createUser($user_id, $password);
+      }
+    }
 
 		$this->syncUserInfo($user_id);
 	}
@@ -172,7 +173,7 @@ class owncloudmemberAdminModel extends owncloudmember
 		$members = $members->data;
 
 		foreach ($members as $member) {
-            $this->userSync($member->user_id);
+      $this->userSync($member->user_id);
 		}
 	}
 

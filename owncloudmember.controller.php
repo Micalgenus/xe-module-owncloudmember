@@ -18,8 +18,7 @@ class owncloudmemberController extends owncloudmember
 	/**
 	 * @brief 로그인 실패 시 로그인 기록 남김
 	 */
-	function triggerBeforeLogin(&$member_info)
-    {
+	function triggerBeforeLogin(&$member_info) {
 		$user_id = $member_info->user_id;
 		$password = trim($member_info->password);
 
@@ -32,8 +31,7 @@ class owncloudmemberController extends owncloudmember
 
 		$password_org = $member->password;
 
-		if($oMemberModel->isValidPassword($password_org, $password))
-        {
+		if($oMemberModel->isValidPassword($password_org, $password)) {
 			$oOwncloudememberAdminModel = &getAdminModel('owncloudmember');
 			$oOwncloudememberAdminModel->userSync($user_id, $password);
 		}

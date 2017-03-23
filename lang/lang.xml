@@ -33,7 +33,19 @@
 	<item name="quota_none">
 		<value xml:lang="ko"><![CDATA[무제한]]></value>
 	</item>
-    <item name="owncloudmember_admin_setting">
-        <value xml:lang="ko"><![CDATA[관리자 계정 설정]]></value>
-    </item>
+  <item name="owncloudmember_admin_setting">
+      <value xml:lang="ko"><![CDATA[관리자 계정 설정]]></value>
+  </item>
+  <item name="owncloudmember_size_setting">
+      <value xml:lang="ko"><![CDATA[용량 설정]]></value>
+  </item>
+  <item name="owncloudmember_password_change">
+      <value xml:lang="ko"><![CDATA[관리자 비밀번호 설정]]></value>
+  </item>
+  <item name="password_change">
+      <value xml:lang="ko"><![CDATA[비밀번호]]></value>
+  </item>
+  <item name="re_password_change">
+      <value xml:lang="ko"><![CDATA[비밀번호 확인]]></value>
+  </item>
 </lang>

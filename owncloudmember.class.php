@@ -12,8 +12,7 @@
 	/**
 	 * @brief Init
 	 */
-	function owncloud()
-    {
+	function owncloudmember() {
 		if(!Context::isInstalled()) return;
 	}
 
@@ -28,8 +27,7 @@
 	/**
 	 * @brief Update
 	 */
-	function moduleUpdate()
-    {
+	function moduleUpdate() {
 		$oModuleModel = &getModel('module');
 		$oModuleController = &getController('module');
 
@@ -42,15 +40,13 @@
 	/**
 	 * @brief 캐시 파일 재생성
 	 */
-	function recompileCache()
-    {
+	function recompileCache() {
 	}
 
 	/**
 	 * @brief Init Module Config
 	 */
-	function InitConfig()
-    {
+	function InitConfig() {
 		$config = getModel('module')->getModuleConfig('owncloudmember');
 		$config->admin_id = $config->admin_id ?: "";
 		$config->admin_pw = $config->admin_pw ?: "";

@@ -12,5 +12,6 @@
 
 		<!-- Admin Controller -->
 		<action name="procOwncloudmemberAdminSiteChange" type="controller" />
+		<action name="procOwncloudmemberAdminChangePassword" type="controller" />
 	</actions>
 </module>
